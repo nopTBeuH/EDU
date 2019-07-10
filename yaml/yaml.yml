@@ -1,0 +1,69 @@
+#check with YAML Lint
+---
+
+1 otdel:
+  Name:Olya
+    Quantity:3
+    Age:-
+    Profession:Buhgalter
+    Salary:max
+  Name:Dima
+    Quantity:3
+    Age:-
+    Profession:-
+    Salary:-
+  Name:Ivan
+    Quantity:2
+    Age:-
+    Pprofession:-
+    Salary:-
+
+2 otdel:
+  Name:Roman
+    Quantity:4
+    Age:-
+    Profession:lawyer
+    Salary:-
+  Name:Maksim
+    Quantity:2
+    Age:-
+    Profession:driver
+    Salary:-
+
+3 otdel:
+  Name:Olya
+    Quantity:1
+    Age:-
+    Profession:lawyer
+    Salary:-
+  Name:Ivan
+    Quantity:1
+    Age:-
+    Pprofession:builder
+    Salary:-
+  Name:Nikolay
+    Quantity:1
+    Age:-
+    Pprofession:builder
+    Salary:-
+
+4 otdel:
+  Name:Olya
+    Quantity:5
+    Age:more than 30
+    Pprofession:-
+    Salary:-
+
+5 otdel:
+  Name:Olya
+    Quantity:5
+    Age:more than 30
+    Pprofession:-
+    Salary:-
+
+6 otdel:
+  Name:Igor
+    Quantity:1
+    Age:more than 50
+    Pprofession:director of security
+    Salary:less than max
