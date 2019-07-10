@@ -1,4 +1,4 @@
-version: "3.7"'
+version: "3.7"
 
 services:
 
@@ -7,8 +7,6 @@ services:
     ports:
       - "80:80"
     volumes:
-      - type: volume
-        source: 
-
-volumes:
-  
+      - type: bind
+        source: ./www
+        target: /usr/share/nginx/html
