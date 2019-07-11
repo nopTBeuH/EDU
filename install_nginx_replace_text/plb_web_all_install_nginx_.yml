@@ -1,0 +1,31 @@
+---
+- hosts: web_all
+  name: Update cashe, install nginx, replace text in start html
+  become: yes
+
+  tasks:
+
+    - name: Install list of packages, nginx and depen
+      apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+      vars:
+        packages:
+          - python-apt
+          - python3-apt
+          - aptitude
+          - nginx
+
+    - name: service nginx started
+      service:
+        name: nginx
+        state: started
+
+    - name: Replace after the expression till the end of the file (requires Ansible >= 2.4)
+      replace:
+        path: /var/www/html/index.nginx-debian.html
+        after: '<body>'
+        before: '</body>'
+        regexp: '^(.+)$'
+        replace: '<script> document.write(new Date().toLocaleDateString()); </script>'
