@@ -1,0 +1,52 @@
+---
+- hosts: web_all
+  name: Install Docker using repository 
+  become: yes
+
+  tasks:
+
+  - name: Install packages for apt, docker
+    apt:
+      name: "{{ packages }}"
+      state: latest
+      update_cache: yes
+    vars:
+      packages:
+      - python-apt
+      - python3-apt
+      - aptitude
+      - docker.io
+      - docker-compose
+      - python-docker
+
+  - name: Service Docker is started
+    service:
+      name: docker
+      state: started
+
+  - name: Dockerfile copy in src
+    copy:
+      src: Dockerfile
+      dest: /tmp/Dockerfile
+
+  - name: Permissoin
+    file:
+      path: /var/lib/lxcfs/cgroup
+      state: directory
+      mode: u+rx
+      recurse: yes
+
+  - name: Build image
+    docker_image:
+      name: myimage
+      build:
+        path: /tmp
+      source: build
+
+  - name: Run container
+    docker_container:
+      name: mycontainer
+      image: myimage
+      ports:
+        - "8080:8080"
+      state: started
