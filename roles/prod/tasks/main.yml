@@ -1,0 +1,21 @@
+---
+# tasks file for prod
+- name: install packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - python-apt
+      - python3-apt
+      - aptitude
+      - tomcat8
+
+- name: copy hello-1.0.war
+  copy:
+    src: hello-1.0.war
+    dest: "{{ dest_folder }}/hello-1.0.war"
+    mode: 0555
+  notify:
+    - restart tomcat8

@@ -1,0 +1,18 @@
+---
+# tasks file for devel
+- name: install packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - python-apt
+      - python3-apt
+      - aptitude
+      - tomcat8
+      - git
+      - ncdu
+      - mc
+      - openjdk-8-jdk
+      - maven

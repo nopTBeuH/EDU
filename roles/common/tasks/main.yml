@@ -1,0 +1,17 @@
+---
+# tasks file for common
+- name: install packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - python-apt
+      - python3-apt
+      - aptitude
+      - tree
+      - mc
+      - htop
+      - ncdu
+      - links
