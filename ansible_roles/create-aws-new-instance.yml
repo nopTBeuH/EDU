@@ -1,0 +1,7 @@
+---
+ - hosts: aws
+   connection: local
+   gather_facts: false
+   user: ubuntu
+   roles:
+    - aws-new-instance

@@ -1,0 +1,12 @@
+---
+# vars file for aws-new-instance
+ec2_keypair: "YOUR_KEYPAIR"
+ec2_security_group: "SECURITY_GROUP"
+ec2_instance_type: "t2.micro"
+ec2_image: "ami-ID"
+ec2_subnet_ids: ['subnet-ID','subnet-ID','subnet-ID']
+ec2_region: "us-east-1"
+ec2_tag_Name: "Testserver"
+ec2_tag_Type: "Testserver"
+ec2_tag_Environment: "production"
+ec2_volume_size: 16
