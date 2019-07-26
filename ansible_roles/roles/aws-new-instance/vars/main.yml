@@ -10,3 +10,5 @@ ec2_tag_Name: "Testserver"
 ec2_tag_Type: "Testserver"
 ec2_tag_Environment: "production"
 ec2_volume_size: 16
+hostpath: "etc/ansible/hosts"
+hoststring: "ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/user/.ssh/MyKey.pem"
